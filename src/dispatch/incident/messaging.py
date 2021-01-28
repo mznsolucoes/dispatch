@@ -155,8 +155,10 @@ def send_welcome_email_to_participant(
             {"conversation_commands_reference_document_weblink": conversation_reference.weblink}
         )
 
+    notification_text = "Incident Notification"
     plugin.instance.send(
         participant_email,
+        notification_text,
         INCIDENT_PARTICIPANT_WELCOME_MESSAGE,
         MessageType.incident_participant_welcome,
         **message_kwargs,
